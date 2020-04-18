@@ -1,0 +1,177 @@
+---
+layout: default
+title: "Settings"
+---
+
+
+<script language="JavaScript">
+var password = "";
+password = prompt('Password required:','');
+if (password != 'll') {
+alert("Incorrect password!");
+window.history.back(-1);
+}
+</script>
+
+
+<p class="page-title">
+	<span class="btn btn-sm btn-round btn-highlight disabled">
+		<span class="glyphicon glyphicon-cog"></span> &nbsp;
+		<span class="chn">設置</span>
+		<span class="eng">SETTINGS</span>
+	</span>
+</p>
+
+
+
+
+<section>
+	<p class="list-title slim">
+		<i data-feather="dollar-sign"></i>&nbsp;
+		<span class="chn">餘額</span>
+		<span class="eng">BALANCE</span>
+	</p>
+
+	<ul class="nav nav-tabs">
+		<li class="active">
+			<a href="#ccb" data-toggle="tab" aria-expanded="false">
+				CCB
+			</a>
+		</li>
+
+		<li>
+			<a href="#cmb" data-toggle="tab" aria-expanded="false">
+				CMB
+			</a>
+		</li>
+	</ul>
+
+
+	<div id="myTabContent" class="tab-content">
+		<div class="tab-pane fade active in" id="ccb">
+			<canvas id="myBalanceCCB" width="100%" height="35"></canvas>
+		</div>
+
+		<div class="tab-pane fade" id="cmb">
+			<canvas id="myBalanceCMB" width="100%" height="35"></canvas>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+<!-- 建設銀行 -->
+<script type="text/javascript">
+var ctx = document.getElementById('myBalanceCCB').getContext('2d');
+var chart = new Chart(ctx, {
+	type: 'line',
+	data: {
+		labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+		datasets: [{
+			label: "2020",
+			borderColor: 'rgba(153, 102, 255, 1)',
+			backgroundColor: 'rgba(153, 102, 255, 0.2)',
+			borderWidth: 2,
+			pointBackgroundColor: 'rgba(255,255,255,1)',
+			data: [0, 6603.93, 15559.14, 13689.89],
+		},
+		],
+	},
+	options: {}
+});
+</script>
+
+
+
+
+
+<!-- 招商銀行 -->
+<script type="text/javascript">
+var ctx = document.getElementById('myBalanceCMB').getContext('2d');
+var chart = new Chart(ctx, {
+	type: 'line',
+	data: {
+		labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+		datasets: [{
+			label: "2020",
+			borderColor: 'rgba(153, 102, 255, 1)',
+			backgroundColor: 'rgba(153, 102, 255, 0.2)',
+			borderWidth: 2,
+			pointBackgroundColor: 'rgba(255,255,255,1)',
+			data: [150000.00, 159658.21, 159355.40, 159280.30],
+		}, {
+			label: "2019",
+			borderColor: 'rgba(75, 192, 192, 1)',
+			backgroundColor: 'rgba(75, 192, 192, 0.2)',
+			borderWidth: 2,
+			pointBackgroundColor: 'rgba(255,255,255,1)',
+			data: [101157.15, 148090.71, 144114.57, 138899.72, 150915.61, 165865.61, 151866.27, 151760.27, 150095.27, 148686.52, 148540.52, 147948.52],
+		}, {
+			label: "2018",
+			borderColor: 'rgba(255,99,132,1)',
+			backgroundColor: 'rgba(255,99,132,0.2)',
+			borderWidth: 2,
+			pointBackgroundColor: 'rgba(255,255,255,1)',
+			data: [73.36, 792.87, 30495.61, 26880.01, 47007.49, 61953.62, 50657.26, 75975.56, 70751.90, 105273.78, 104407.00, 97566.35],
+		}, {
+			label: "2017",
+			borderColor: 'rgba(54, 162, 235, 1)',
+			backgroundColor: 'rgba(54, 162, 235, 0.2)',
+			borderWidth: 2,
+			pointBackgroundColor: 'rgba(255,255,255,1)',
+			data: [15937.18, 31949.04, 28676.61, 33266.17, 19390.35, 15635.94, 12470.78, 8130.04, 4191.63, 3611.42, 4513.78, 5271.72],
+		}, {
+			label: "2016",
+			borderColor: 'rgba(255, 206, 86, 1)',
+			backgroundColor: 'rgba(255, 206, 86, 0.2)',
+			borderWidth: 2,
+			pointBackgroundColor: 'rgba(255,255,255,1)',
+			data: [0, 0, 0, 0, 0, 0, 0, 0, 1000, 11084.15, 6707.17, 12993.12],
+		},
+		],
+	},
+	options: {}
+});
+</script>
+
+
+
+
+
+
+
+<section>
+	<p class="list-title slim">
+		<i data-feather="dollar-sign"></i>&nbsp;
+		<span class="chn">目標</span>
+		<span class="eng">TARGETS</span>
+	</p>
+
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Year</th>
+				<th>Goal</th>
+				<th>Status</th>
+				<th>Progress</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for target in site.data.goals reversed %}
+			<tr>
+				<td>{{ target.year }}</td>
+				<td>{{ target.goal }}</td>
+				<td>{{ target.status }}</td>
+				<td>
+					<div class="progress">
+						<div class="progress-bar progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{ target.progress }}"><span class="">{{ target.progress }} Complete</span></div>
+					</div>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</section>

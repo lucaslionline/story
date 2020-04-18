@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+
+<section style="margin-top: 7rem;">
+	<p class="gray text-uppercase" style="margin-bottom: 2rem;">
+		<i data-feather="calendar"></i>
+		{{ page.date | date_to_string }}
+		&nbsp;
+		
+	</p>
+
+	{{ content }}
+
+
+	<hr>
+	<div class="small text-uppercase">
+		<i data-feather="tag"></i>
+		{% include post_tags.html %}
+	</div>
+	
+</section>
+
+
+<p class="page-nav">
+	{% include pages.html %}
+</p>

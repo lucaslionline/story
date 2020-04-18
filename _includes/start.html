@@ -1,0 +1,83 @@
+<div class="start-left">
+	<a href="{{ site.baseurl }}/">
+		<img class="start-profile" src="{{ site.baseurl }}/assets/img/{{ site.avatar }}.png">
+	</a>
+
+	<div class="start-left-btm">
+		<a class="btm-icon {% if page.url contains 'settings' %}active{% endif %}" href="{{ site.baseurl }}/settings.html">
+			<span class="glyphicon glyphicon-cog"></span>
+		</a>
+
+		<a class="btm-icon" href="{{ site.baseurl }}/">
+			<span class="glyphicon glyphicon-log-out"></span>
+		</a>
+	</div>
+</div>
+
+
+
+
+
+<div class="start-right">
+	<p>
+		<strong>
+			<span class="eng">
+				<script type="text/javascript">greetingEng();</script>
+			</span>
+			<span class="chn">
+				<script type="text/javascript">greetingChn();</script>
+			</span>
+		</strong>
+		<br>
+		<span class="gray small">
+			<script type="text/javascript">document.write(new Date().toLocaleString());</script>
+		</span>
+	</p>
+
+
+
+	<p>
+		<form method="get" action="https://www.google.com/search" target="_blank">
+			<input type="text" name="q" size="25" class="form-control" placeholder="Google" required>
+		</form>
+	</p>
+
+	<p>
+		<audio src="{{ site.baseurl }}/assets/mp3/Shaun_Gibson-If_I_Stay.mp3" controls="controls" style="width: 100%;">
+			Your browser does not support the audio element.
+		</audio>
+	</p>
+
+
+
+
+
+
+	<strong>
+		<span class="chn">日誌</span>
+		<span class="eng">Blog</span>
+		<a href="{{ site.baseurl }}/blog/" class="pull-right">
+			<i data-feather="more-horizontal"></i>
+		</a>
+	</strong>
+	<div class="cloth">
+		<a href="{{ site.baseurl }}/archives.html" class="cloth-icon">
+			<i data-feather="archive" style="font-size: x-large;"></i><br>
+			<span class="chn">歸檔</span>
+			<span class="eng">Archives</span>
+		</a><a href="{{ site.baseurl }}/tags/" class="cloth-icon">
+		<i data-feather="tag" style="font-size: x-large;"></i><br>
+		<span class="chn">標籤</span>
+		<span class="eng">Tags</span>
+	</a>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
