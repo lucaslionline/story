@@ -280,7 +280,7 @@ ul.list li {
 
 	/* 切换页時間軸 */
 	.widget-timeline {
-		height: 364px;
+		/*height: 364px;*/
 		overflow-y: auto;
 		position: relative;
 	}
@@ -290,7 +290,7 @@ ul.list li {
 	.entries:before {
 		content: '';
 		position: absolute;
-		min-height: 190%;
+		min-height: 100%;
 		top: 0px;
 		left: 50%;
 		bottom: 0px;

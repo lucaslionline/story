@@ -1,0 +1,25 @@
+---
+layout: default
+title: "Timeline"
+---
+
+<p class="page-title">
+	<span class="btn btn-sm btn-round btn-highlight disabled">
+		<span class="glyphicon glyphicon-cog"></span> &nbsp;
+		<span class="chn">時間軸</span>
+		<span class="eng">TIMELINE</span>
+	</span>
+</p>
+
+
+<div class="widget-timeline">
+	<div class="entries">
+		{% for entry in site.data.timeline %}
+		<div class="entry">
+			<div class="entry-title">{{ entry.year }}</div>
+			<div class="small">{{ entry.event }}</div>
+			<div class="small gray">{{ entry.place }}</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
